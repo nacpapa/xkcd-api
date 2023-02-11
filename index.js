@@ -1,8 +1,7 @@
 import fs from "fs-extra";
 import axios from "axios";
 import { getImageSize } from "./getImageSize.js";
-
-const log = (...args) => console.log(...args);
+import { log, time } from "./log.js";
 
 const INITIAL_ID_XKCD_COMICS = 2500;
 const MAX_ID_XKCD_COMICS = 2588;
@@ -26,3 +25,6 @@ for (let id = INITIAL_ID_XKCD_COMICS; id <= MAX_ID_XKCD_COMICS; id++) {
   fs.writeJSON(jsonFile, comicToStore);
   log(`Wrote ${jsonFile}`);
 }
+
+// END TIME
+time();
